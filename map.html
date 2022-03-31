@@ -33,27 +33,41 @@
 </style>
 <script>
 
-        
-    
+    let svg;
+    let svgDoc;
+    let _travel_area;
+    let _travelMap_id;
+    let _travelMap_id_array = new Array();
+
     window.onload = function () {
-        const svg = document.getElementById("map-svg");
-        const svgDoc = svg.contentDocument;
-        const _travel_area = svgDoc.getElementsByClassName("travel_area");
         
+        svg = document.getElementById("map-svg");
+        svgDoc = svg.contentDocument;
+        _travel_area = svgDoc.getElementsByClassName("travel_area");
+        _travelMap_id = svgDoc.getElementsByTagName('g');
+
 
         for (var i = 0; i < _travel_area.length; i++) {
             _travel_area[i].addEventListener('click', handleClick);
         }
+
+        for (var i = 0; i < _travelMap_id.length; i++){
+            _travelMap_id_array.push(_travelMap_id[i].id);
+        }
+        
+        
     };
     
     
     var handleClick = function(){
         
-        this.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%)';
+        let content = this.textContent;
+        alert(content);
         
-       // this.style.cssText += 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg) brightness(95 %) contrast(101 %); ont-size : 100px;'
-        //this.textContent = 'gd';
+        
+        alert(_travelMap_id_array);
 
+        this.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%)';
 
     }
 
@@ -64,6 +78,5 @@
         <div id="travelMain">예원이와의 여행 목록</div>
         <object id="map-svg" width="100%" height="100%" type="image/svg+xml" data="map.svg"></object>
     </div>
-
 </body>
 </html>
