@@ -1054,7 +1054,7 @@
 		l0.517,4.106l-1.718,4.191l-3.75,3.875l-3.875,0.125L191.876,343.855z" />
 		<text class="travel_area" dx="50%" x="-23%" y="25%">서울</text>
 		<text class="travel_area" dx="50%" x="-32%" y="25%">인천</text>
-		<text class="travel_area" dx="50%" x="-15%" y="29%">경기</text>
+		<!-- <text class="travel_area" dx="50%" x="-15%" y="29%">경기</text> -->
 		<text class="travel_area" dx="50%" x="13%" y="7%">고성</text>
 		<text class="travel_area" dx="53%" x="13%" y="10%">속초</text>
 		<text class="travel_area" dx="53%" x="15%" y="14%">양양</text>
@@ -1095,6 +1095,229 @@
 		<text class="travel_area" dx="18.5%" x="0.5%" y="50.5%">보령</text>
 		<text class="travel_area" dx="18.5%" x="0.5%" y="45.5%">홍성</text>
 		<text class="travel_area" dx="15.5%" x="0.5%" y="41%">서산</text>
+		<text class="travel_area" dx="10%" x="0.5%" y="41%">태안</text>
+		<text class="travel_area" dx="20%" x="0.5%" y="38%">당진</text>
+		<text class="travel_area" dx="24%" x="0.5%" y="43%">예산</text>
+		<text class="travel_area" dx="24%" x="0.5%" y="48.5%">정양</text>
+		<text class="travel_area" dx="25%" x="0.5%" y="52.5%">부여</text>
+		<text class="travel_area" dx="28.5%" x="0.5%" y="57.5%">익산</text>
+		<text class="travel_area" dx="34%" x="0.5%" y="58.5%">완주</text>
+		<text class="travel_area" dx="31%" x="0.5%" y="61.5%">전주</text>
+		<text class="travel_area" dx="26%" x="0.5%" y="66.5%">정읍</text>
+		<text class="travel_area" dx="23%" x="0.5%" y="72.5%">장성</text>
+		<text class="travel_area" dx="25%" x="0.5%" y="76.5%">광주</text>
+		<text class="travel_area" dx="21.5%" x="0.5%" y="80%">나주</text>
+		<text class="travel_area" dx="29%" x="0.5%" y="80%">화순</text>
+		<text class="travel_area" dx="38%" x="0.5%" y="80%">순천</text>
+		<text class="travel_area" dx="45%" x="0.5%" y="79.5%">광양</text>
+		<text class="travel_area" dx="48%" x="0.5%" y="76%">하동</text>
+		<text class="travel_area" dx="51%" x="6%" y="75.5%">진주</text>
+		<text class="travel_area" dx="51%" x="13%" y="73.5%">함안</text>
+		<text class="travel_area" dx="51%" x="10.5%" y="70.5%">의령</text>
+		<text class="travel_area" dx="51%" x="15.5%" y="68.5%">창녕</text>
+		<text class="travel_area" dx="51%" x="22.5%" y="69%">밀양</text>
+		<text class="travel_area" dx="51%" x="22.5%" y="65.5%">청도</text>
+		<text class="travel_area" dx="51%" x="23.5%" y="61.5%">경산</text>
+		<text class="travel_area" dx="51%" x="26.5%" y="57%">영천</text>
+		<text class="travel_area" dx="51%" x="30%" y="50%">청송</text>
+		<text class="travel_area" dx="51%" x="30.5%" y="42%">영양</text>
+		<text class="travel_area" dx="51%" x="25%" y="37%">봉화</text>
+		<text class="travel_area" dx="51%" x="27%" y="33%">태백</text>
+		<text class="travel_area" dx="51%" x="20%" y="28%">정선</text>
+		<text class="travel_area" dx="51%" x="13%" y="24%">평창</text>
+		<text class="travel_area" dx="51%" x="4%" y="19.5%">홍천</text>
+		<text class="travel_area" dx="51%" x="8.5%" y="12.5%">인제</text>
+		<text class="travel_area" dx="51%" x="2%" y="10%">양구</text>
+		<text class="travel_area" dx="46%" x="0%" y="10.5%">화천</text>
+		<text class="travel_area" dx="38%" x="0%" y="9%">철원</text>
+		<text class="travel_area" dx="29%" x="0%" y="11.5%">연천</text>
+		<text class="travel_area" dx="35%" x="0%" y="14.5%">포천</text>
+		<text class="travel_area" dx="39%" x="0%" y="18%">가평</text>
+		<text class="travel_area" dx="47.5%" x="0%" y="16.5%">춘천</text>
+		<text class="travel_area" dx="51%" x="5%" y="24.5%">횡성</text>
+		<text class="travel_area" dx="51%" x="14%" y="31.5%">영월</text>
+		<text class="travel_area" dx="51%" x="12%" y="35.5%">단양</text>
+		<text class="travel_area" dx="51%" x="16.5%" y="38.5%">영주</text>
+		<text class="travel_area" dx="51%" x="22%" y="45%">안동</text>
+		<text class="travel_area" dx="51%" x="18%" y="50%">의성</text>
+		<text class="travel_area" dx="51%" x="20%" y="54.5%">군위</text>
+		<text class="travel_area" dx="51%" x="18%" y="61.5%">대구</text>
+		<text class="travel_area" dx="51%" x="10.5%" y="63.5%">고령</text>
+		<text class="travel_area" dx="51%" x="6.5%" y="67.5%">합천</text>
+		<text class="travel_area" dx="51%" x="0.5%" y="71.5%">산청</text>
+		<text class="travel_area" dx="41.5%" x="0.5%" y="74.5%">구례</text>
+		<text class="travel_area" dx="35%" x="0.5%" y="74.5%">곡성</text>
+		<text class="travel_area" dx="28%" x="0.5%" y="73.5%">담양</text>
+		<text class="travel_area" dx="32%" x="0.5%" y="70.5%">순창</text>
+		<text class="travel_area" dx="34%" x="0.5%" y="67%">임실</text>
+		<text class="travel_area" dx="39.5%" x="0.5%" y="61%">진안</text>
+		<text class="travel_area" dx="42.5%" x="0.5%" y="65.5%">장수</text>
+		<text class="travel_area" dx="40%" x="0.5%" y="70.5%">남원</text>
+		<text class="travel_area" dx="46.5%" x="0.5%" y="67.5%">함양</text>
+		<text class="travel_area" dx="51.5%" x="0.5%" y="63.5%">거창</text>
+		<text class="travel_area" dx="46.5%" x="0.5%" y="59.5%">무주</text>
+		<text class="travel_area" dx="55.5%" x="0.5%" y="56%">김천</text>
+		<text class="travel_area" dx="59.5%" x="0.5%" y="60%">성주</text>
+		<text class="travel_area" dx="59.5%" x="5.5%" y="57.5%">칠곡</text>
+		<text class="travel_area" dx="59.5%" x="3%" y="53.5%">구미</text>
+		<text class="travel_area" dx="53%" x="3%" y="48.5%">상주</text>
+		<text class="travel_area" dx="46%" x="3%" y="54.5%">영동</text>
+		<text class="travel_area" dx="37.5%" x="3%" y="55%">금산</text>
+		<text class="travel_area" dx="30%" x="3%" y="54%">논산</text>
+		<text class="travel_area" dx="31.5%" x="3%" y="52%">계룡</text>
+		<text class="travel_area" dx="35.5%" x="3%" y="50.5%">대전</text>
+		<text class="travel_area" dx="42%" x="3%" y="51%">옥천</text>
+		<text class="travel_area" dx="44%" x="3%" y="47%">보은</text>
+		<text class="travel_area" dx="46%" x="3%" y="41%">괴산</text>
+		<text class="travel_area" dx="51.5%" x="7%" y="42.5%">문경</text>
+		<text class="travel_area" dx="50.5%" x="14%" y="43%">예천</text>
+		<text class="travel_area" dx="38%" x="3%" y="44%">청주</text>
+		<text class="travel_area" dx="33%" x="3%" y="46.5%">연기</text>
+		<text class="travel_area" dx="28.5%" x="3%" y="47.5%">공주</text>
+		<text class="travel_area" dx="25.5%" x="3%" y="40.5%">아산</text>
+		<text class="travel_area" dx="31.5%" x="3%" y="40.5%">천안</text>
+		<text class="travel_area" dx="37%" x="3%" y="39%">진천</text>
+		<text class="travel_area" dx="41%" x="3%" y="37.5%">음성</text>
+		<text class="travel_area" dx="47.5%" x="3%" y="35.5%">충주</text>
+		<text class="travel_area" dx="54.5%" x="3%" y="33.5%">제천</text>
+		<text class="travel_area" dx="48%" x="3%" y="29.5%">원주</text>
+		<text class="travel_area" dx="41.5%" x="3%" y="29.5%">여주</text>
+		<text class="travel_area" dx="36.5%" x="3%" y="31%">이천</text>
+		<text class="travel_area" dx="31.5%" x="3%" y="31%">용인</text>
+		<text class="travel_area" dx="32.5%" x="3%" y="35.5%">안성</text>
+		<text class="travel_area" dx="25.5%" x="3%" y="36%">평택</text>
+		<text class="travel_area" dx="27%" x="3%" y="32.5%">오산</text>
+		<text class="travel_area" dx="22%" x="3%" y="32.5%">화성</text>
+		<text class="travel_area" dx="40%" x="3%" y="25%">양평</text>
+		<text class="travel_area" dx="31.5%" x="3%" y="21.5%">남양주</text>
+		<text class="travel_area" dx="31.5%" x="3%" y="24.5%">하남</text>
+		<text class="travel_area" dx="33.5%" x="3%" y="27%">광주</text>
+		<text class="travel_area" dx="30%" x="0%" y="16.5%">동두천</text>
+		<text class="travel_area" dx="29%" x="0%" y="18.5%">양주</text>
+		<text class="travel_area" dx="30%" x="0%" y="20%">의정부</text>
+		<text class="travel_area" dx="24%" x="0%" y="18.5%">파주</text>
+		<text class="travel_area" dx="24.5%" x="0%" y="21.5%">고양</text>
+		<text class="travel_area" dx="19.5%" x="0%" y="21.5%">김포</text>
+		<text class="travel_area" dx="15%" x="0%" y="20.5%">강화</text>
+		<text class="travel_area" dx="28.5%" x="3%" y="27.5%">하남</text>
+		<text class="travel_area" dx="26%" x="3%" y="30%">수원</text>
+		<text class="travel_area" dx="21.5%" x="3%" y="29.5%">안산</text>
+		<text class="travel_area" dx="20.5%" x="3%" y="28%">시흥</text>
+		<text class="travel_area" dx="58.5%" x="34%" y="48%">울릉도</text>
+		<text class="travel_area" dx="62.5%" x="33.5%" y="53.5%">독도</text>
+		<text class="travel_area" dx="55%" x="26.5%" y="93.5%">제주도</text>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		
 
