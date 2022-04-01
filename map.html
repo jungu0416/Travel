@@ -31,44 +31,48 @@
         }
     }
 </style>
+<script src="행정구역 분류.js"></script>
 <script>
 
     let svg;
     let svgDoc;
     let _travel_area;
     let _travelMap_id;
-    let _travelMap_id_array = new Array();
+    let changeColor;
+    let citylist;
+    citylist = cityList_json;
+
+
 
     window.onload = function () {
-        
         svg = document.getElementById("map-svg");
         svgDoc = svg.contentDocument;
         _travel_area = svgDoc.getElementsByClassName("travel_area");
         _travelMap_id = svgDoc.getElementsByTagName('g');
 
-
-        for (var i = 0; i < _travel_area.length; i++) {
+        for (let i = 0; i < _travel_area.length; i++) {
             _travel_area[i].addEventListener('click', handleClick);
         }
-
-        for (var i = 0; i < _travelMap_id.length; i++){
-            _travelMap_id_array.push(_travelMap_id[i].id);
-        }
-        
-        
     };
     
-    
-    var handleClick = function(){
-        
+    let handleClick = function(){
         let content = this.textContent;
         alert(content);
         
-        
-        alert(_travelMap_id_array);
+        alert(getFullName(content));
 
-        this.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%)';
+        if(false){
+            //changeColor = svgDoc.getElementById('서울특별시');
+            //changeColor.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)';
+        }
+    }
 
+    let getFullName = function getFullName(param){
+        for(let i=0; i < cityList_json.length; i++){
+            if(Object.values(cityList_json[i])[0] == param){
+               return Object.values(cityList_json[i])[1];
+            }
+        }
     }
 
 
