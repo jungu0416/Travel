@@ -9,6 +9,8 @@ AWS EC2 를 이용한 서비스 배포
 
 젠킨스 주소 -> https://jenkins.potatoo.dev
 
+MariaDB -> 
+
 OS -> Ubuntu 20.04
 
 WEB -> nginx 1.18.0
