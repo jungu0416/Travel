@@ -1098,7 +1098,7 @@
 		<text class="travel_area" dx="10%" x="0.5%" y="41%">태안</text>
 		<text class="travel_area" dx="20%" x="0.5%" y="38%">당진</text>
 		<text class="travel_area" dx="24%" x="0.5%" y="43%">예산</text>
-		<text class="travel_area" dx="24%" x="0.5%" y="48.5%">정양</text>
+		<text class="travel_area" dx="24%" x="0.5%" y="48.5%">청양</text>
 		<text class="travel_area" dx="25%" x="0.5%" y="52.5%">부여</text>
 		<text class="travel_area" dx="28.5%" x="0.5%" y="57.5%">익산</text>
 		<text class="travel_area" dx="34%" x="0.5%" y="58.5%">완주</text>
@@ -1172,7 +1172,7 @@
 		<text class="travel_area" dx="51.5%" x="7%" y="42.5%">문경</text>
 		<text class="travel_area" dx="50.5%" x="14%" y="43%">예천</text>
 		<text class="travel_area" dx="38%" x="3%" y="44%">청주</text>
-		<text class="travel_area" dx="33%" x="3%" y="46.5%">연기</text>
+		<text class="travel_area" dx="33%" x="3%" y="46.5%">세종</text>
 		<text class="travel_area" dx="28.5%" x="3%" y="47.5%">공주</text>
 		<text class="travel_area" dx="25.5%" x="3%" y="40.5%">아산</text>
 		<text class="travel_area" dx="31.5%" x="3%" y="40.5%">천안</text>
@@ -1198,7 +1198,6 @@
 		<text class="travel_area" dx="24%" x="0%" y="18.5%">파주</text>
 		<text class="travel_area" dx="24.5%" x="0%" y="21.5%">고양</text>
 		<text class="travel_area" dx="19.5%" x="0%" y="21.5%">김포</text>
-		<text class="travel_area" dx="15%" x="0%" y="20.5%">강화</text>
 		<text class="travel_area" dx="28.5%" x="3%" y="27.5%">성남</text>
 		<text class="travel_area" dx="26%" x="3%" y="30%">수원</text>
 		<text class="travel_area" dx="21.5%" x="3%" y="29.5%">안산</text>

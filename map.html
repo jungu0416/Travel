@@ -34,52 +34,57 @@
 <script src="행정구역 분류.js"></script>
 <script>
 
-    let svg;
-    let svgDoc;
-    let _travel_area;
-    let _travelMap_id;
-    let changeColor;
-    let citylist;
+    let svg; // svg 엘리먼트 담기
+    let svgDoc; // svg content
+    let _travel_area; // svg안의 travel_area class 담기
+    let citylist; // cityList_json 담는데 안씀;
     citylist = cityList_json;
-
-
-
+    
+    /* 로딩 후 함수 */
     window.onload = function () {
         svg = document.getElementById("map-svg");
         svgDoc = svg.contentDocument;
         _travel_area = svgDoc.getElementsByClassName("travel_area");
-        _travelMap_id = svgDoc.getElementsByTagName('g');
-
+        
         for (let i = 0; i < _travel_area.length; i++) {
             _travel_area[i].addEventListener('click', handleClick);
         }
     };
     
+    /* 클릭시 해당 화면을 색칠해줌 */
     let handleClick = function(){
         let content = this.textContent;
-        alert(content);
+        // alert(content); 클릭한 글자 alert
+        // alert(getFullName(content)); 글자를 시군으로 리턴
         
-        alert(getFullName(content));
-
-        if(false){
-            //changeColor = svgDoc.getElementById('서울특별시');
-            //changeColor.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)';
+        let cityName = getFullName(content);
+        let changeColor;
+        changeColor = svgDoc.getElementById(cityName);
+        
+        let map_prompt = prompt('비밀번호를 입력하세요'); // 비밀번호 창
+        
+        if(map_prompt == '0000'){
+            /* ajax 실행 */ 
+            changeColor.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)';
+        }else{
+            alert('비밀번호가 틀립니다');
         }
     }
-
+        
+        /* 해당 글자를 시/군으로 알려줌 */ 
     let getFullName = function getFullName(param){
         for(let i=0; i < cityList_json.length; i++){
             if(Object.values(cityList_json[i])[0] == param){
-               return Object.values(cityList_json[i])[1];
+                return Object.values(cityList_json[i])[1];
             }
         }
     }
 
-
 </script>
 <body>
     <div id="map">
-        <div id="travelMain">예원이와의 여행 목록</div>
+        <!-- <div id="travelMain">예원이와의 여행 목록</div> -->
+        <div id="travelMain">색칠</div>
         <object id="map-svg" width="100%" height="100%" type="image/svg+xml" data="map.svg"></object>
     </div>
 </body>
