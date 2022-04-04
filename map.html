@@ -66,15 +66,17 @@
         
         if(map_prompt == '0000'){
             /* ajax 실행 */ 
+
+            
             //changeColor.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)';
             changeColor.style.cssText = 'fill: rgb(108 242 125);';
-
+            alert('색칠 완료!');
         }else{
             alert('비밀번호가 틀립니다');
         }
     }
         
-        /* 해당 글자를 시/군으로 알려줌 */ 
+    /* 해당 글자를 시/군으로 알려줌 */ 
     let getFullName = function getFullName(param){
         for(let i=0; i < cityList_json.length; i++){
             if(Object.values(cityList_json[i])[0] == param){
