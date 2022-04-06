@@ -4,106 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예원이와 함께 칠하는 여행 지도</title>
+    <title>여행 지도</title>
 </head>
-<style>
-    html {font-size:16px}
-    #map{
-        margin: auto;
-        height: auto;
-        text-align: center;
-    }
-    #travelMain{
-        font-size:3rem;
-        margin-bottom: 10px;
-        background:#ffe5ea;
-    }
-    @media only screen and (max-width: 1200px) {
-        #travelMain { 
-        font-size: 2em; 
-        }
-    }
-     @media only screen and (max-width: 750px) {
-        #travelMain { 
-        font-size: 1em; 
-        }
-    }
-</style>
-<script src="행정구역 분류.js"></script>
+<script src="cityList_json.js"></script>
+<script src="map.js"></script>
+<link href="map.css" rel="stylesheet">
 <script>
 
-    let svg; // svg 엘리먼트 담기
-    let svgDoc; // svg content
-    let _travel_area; // svg안의 travel_area class 담기
-    let citylist; // cityList_json 담는데 안씀;
-    citylist = cityList_json;
-    
-    
-    /* 로딩 후 함수 */
-    window.onload = function () {
-        svg = document.getElementById("map-svg");
+    window.onload = function(){
+        svg =  document.getElementById("map-svg");
         svgDoc = svg.contentDocument;
         _travel_area = svgDoc.getElementsByClassName("travel_area");
+
+        let mapClass = new Map();
         
-        for (let i = 0; i < _travel_area.length; i++) {
-            _travel_area[i].addEventListener('click', handleClick);
-        }
-    };
-    
+        mapClass.makeClickEvent(_travel_area);
 
-    /* 클릭시 해당 화면을 색칠해줌 */
-    let handleClick = function(){
-        let content = this.textContent;
-        let cityName = getFullName(content);
-        let changeColor;
-        changeColor = svgDoc.getElementById(cityName);
-        changeColor.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)';
-
-        //let map_prompt = prompt('비밀번호를 입력하세요'); // 비밀번호 창
-        
-        //if(map_prompt == '0000'){
-            /* ajax 실행 */ 
-
-            //changeColor.style.cssText = 'filter: invert(45%) sepia(63%) saturate(1946%) hue-rotate(162deg)';
-           // changeColor.style.cssText = 'fill: rgb(108 242 125);';
-           // alert('색칠 완료!');
-        //}else{
-        //    alert('비밀번호가 틀립니다');
-        //}
     }
-        
-    /* 해당 글자를 시/군으로 알려줌 */ 
-    let getFullName = function getFullName(param){
-
-        if(param == '광주'){
-            let seperate_prompt = prompt('1 : 경기도 광주'+ '\n' +'2 : 전라도 광주');
-            if(seperate_prompt == '1'){
-                return '광주시';
-            }else{
-                return '광주광역시';
-            }
-        }
-
-        if (param == '고성') {
-            let seperate_prompt = prompt('1 : 강원도 고성' + '\n' + '2 : 경상남도 고성');
-            if (seperate_prompt == '1') {
-                return '고성군';
-            } else {
-                return '고성군_1_';
-            }
-        }
-
-        for(let i=0; i < cityList_json.length; i++){
-            if(Object.values(cityList_json[i])[0] == param){
-                return Object.values(cityList_json[i])[1];
-            }
-        }
-    }
-
 </script>
 <body>
     <div id="map">
-        <!-- <div id="travelMain">예원이와의 여행 목록</div> -->
         <div id="travelMain">색칠</div>
         <object id="map-svg" width="100%" height="100%" type="image/svg+xml" data="map.svg"></object>
     </div>
