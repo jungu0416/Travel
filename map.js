@@ -49,8 +49,12 @@ class Map{
         //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
         xhr.open('POST', 'https://travel-api.potatoo.dev/api/check/area', true);
     
+        //HTTP 요청 헤더 설정 
+        // nginx 설정 좀 더 찾아보기
+        //xhr.setRequestHeader('Content-type', 'application/json');
+
         //요청 전송
-        xhr.send();
+        xhr.send(); // <- JSON.stringify(data)를 해서 파라미터로 보내면됨
         
         //비동기 통신일때
         xhr.onload = () => { 
