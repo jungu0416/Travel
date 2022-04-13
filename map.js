@@ -15,6 +15,7 @@ class Map{
     getFullName(param){
         for(let i=0; i < cityList_json.length; i++){
             if(Object.values(cityList_json[i])[0] == param){
+                alert(Object.values(cityList_json[i])[1]);
                 return Object.values(cityList_json[i])[1];
             }
         }

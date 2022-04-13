@@ -1059,7 +1059,7 @@
 		<text class="travel_area" dx="50%" x="-32%" y="25%">인천</text>
 		<text class="travel_area" dx="50%" x="-35%" y="21%">강화</text>
 		<!-- <text class="travel_area" dx="50%" x="-15%" y="29%">경기</text> -->
-		<text class="travel_area" dx="50%" x="13%" y="7%">고성</text>
+		<text class="travel_area" dx="50%" x="13%" y="7%">고성 </text>
 		<text class="travel_area" dx="53%" x="13%" y="10%">속초</text>
 		<text class="travel_area" dx="53%" x="15%" y="14%">양양</text>
 		<text class="travel_area" dx="52.5%" x="22%" y="20%">강릉</text>
@@ -1108,7 +1108,7 @@
 		<text class="travel_area" dx="31%" x="0.5%" y="61.5%">전주</text>
 		<text class="travel_area" dx="26%" x="0.5%" y="66.5%">정읍</text>
 		<text class="travel_area" dx="23%" x="0.5%" y="72.5%">장성</text>
-		<text class="travel_area" dx="25%" x="0.5%" y="76.5%">광주</text>
+		<text class="travel_area" dx="25%" x="0.5%" y="76.5%">광주 </text>
 		<text class="travel_area" dx="21.5%" x="0.5%" y="80%">나주</text>
 		<text class="travel_area" dx="29%" x="0.5%" y="80%">화순</text>
 		<text class="travel_area" dx="38%" x="0.5%" y="80%">순천</text>
