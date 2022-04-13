@@ -9,7 +9,6 @@ class Map{
         }
     };
 
-
     /* 해당 글자를 시/군으로 알려줌 
      * cityList_json = json 형식의 변수
      */ 
@@ -83,16 +82,16 @@ class Map{
         xhr.onload = () => { 
             //통신 성공 
             if (xhr.response == 1) { 
-                alert('성공!');
+                alert("작업 완료"); 
+                location.reload();
             } else { 
                 //통신 실패
-                alert("실패!"); 
+                alert("작업 실패"); 
+                location.reload();
             } 
         }
 
     }
-
-
 
     /* JSON 객체를 가져와서 색칠하기 */
     repeatJSON(obj){
@@ -122,12 +121,25 @@ class Map{
     
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
+        let input = confirm('확인 누르면 색칠 취소누르면 색칠안함');
+        let update;
+
+        if(input){
+            update = 'Y'
+        }else{
+            update = 'N'
+        }
+
         let content = item.textContent;
-        let mapcontent = {"location" : content};
+        let mapcontent = {"location" : content , "update" : update};
         let jsonString = JSON.stringify(mapcontent);
 
         this.updateArea('https://travel-api.potatoo.dev/api/update/area',jsonString);
     }
+
+
+
+
 
 
 }
