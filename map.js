@@ -100,18 +100,16 @@ class Map{
 
         for(let i =0; i< jsonParse.length; i++){
             //let content = item.textContent; csv클릭한것의 text 가져오기
-            let cityName = this.getFullName(jsonParse[i].location);
+            //let cityName = this.getFullName(jsonParse[i].location);
+            let cityName = jsonParse[i].location;
             let changeColor;
-            
             changeColor = svgDoc.getElementById(cityName);
     
             if(changeColor == null){
                 changeColor = svgDoc.getElementsByClassName(cityName);
-                
                 for(let i=0; i < changeColor.length; i++){
                     changeColor[i].style.cssText = 'fill: rgb(108 242 125);';
                 }
-                
             }else{
                 changeColor.style.cssText = 'fill: rgb(108 242 125);';
             }
@@ -130,7 +128,7 @@ class Map{
             update = 'N'
         }
 
-        let content = item.textContent;
+        let content = this.getFullName(item.textContent);
         let mapcontent = {"location" : content , "update" : update};
         let jsonString = JSON.stringify(mapcontent);
 
