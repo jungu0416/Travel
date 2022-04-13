@@ -39,22 +39,19 @@ class Map{
         }
     }
 
-    /*
-    *   travel-api 색칠된 지역 조회하기
-    */
-    checkArea() {
+    // travel-api select
+    checkArea(uri) {
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
         //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
-        xhr.open('POST', 'https://travel-api.potatoo.dev/api/check/area', true);
+        xhr.open('POST', uri , true);
     
         //HTTP 요청 헤더 설정 
-        // nginx 설정 좀 더 찾아보기
-        //xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
 
         //요청 전송
-        xhr.send(); // <- JSON.stringify(data)를 해서 파라미터로 보내면됨
+        xhr.send(); // <- JSON.stringify(data)를 해서 Body로 보내면됨
         
         //비동기 통신일때
         xhr.onload = () => { 
@@ -67,6 +64,34 @@ class Map{
             } 
         }
     }
+
+    // travel-api insert or update 
+    updateArea(uri,jsonString){
+        //XMLHttpRequest 객체 생성
+        let xhr = new XMLHttpRequest();
+    
+        //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
+        xhr.open('POST', uri , true);
+    
+        //HTTP 요청 헤더 설정 
+        xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+
+        //요청 전송
+        xhr.send(jsonString); // <- JSON.stringify(data)를 해서 Body로 보내면됨
+        
+        //비동기 통신일때
+        xhr.onload = () => { 
+            //통신 성공 
+            if (xhr.response == 1) { 
+                alert('성공!');
+            } else { 
+                //통신 실패
+                alert("실패!"); 
+            } 
+        }
+
+    }
+
 
 
     /* JSON 객체를 가져와서 색칠하기 */
@@ -98,8 +123,10 @@ class Map{
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
         let content = item.textContent;
-        alert(content);
-        
+        let mapcontent = {"location" : content};
+        let jsonString = JSON.stringify(mapcontent);
+
+        this.updateArea('https://travel-api.potatoo.dev/api/update/area',jsonString);
     }
 
 

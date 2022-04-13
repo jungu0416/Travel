@@ -20,7 +20,13 @@
         
         mapClass.makeClickEvent(_travel_area);
 
-        mapClass.checkArea();
+        /* DB 접속하여서 색칠하기 */
+        mapClass.checkArea('https://travel-api.potatoo.dev/api/check/area');
+
+        
+
+
+
 
     }
 </script>
