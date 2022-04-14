@@ -22,7 +22,7 @@ class Map{
     }
 
     // travel-api select
-    checkArea(uri) {
+    travelArea_C(uri) {
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
@@ -48,7 +48,7 @@ class Map{
     }
 
     // travel-api insert or update 
-    updateArea(uri,jsonString){
+    travelArea_RUD(uri,jsonString){
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
@@ -64,7 +64,7 @@ class Map{
         //비동기 통신일때
         xhr.onload = () => { 
             //통신 성공 
-            if (xhr.response == 1) { 
+            if (xhr.response >= 1) { 
                 alert("작업 완료"); 
                 location.reload();
             } else { 
@@ -115,10 +115,29 @@ class Map{
         let mapcontent = {"location" : content , "update" : update};
         let jsonString = JSON.stringify(mapcontent);
 
-        this.updateArea('https://travel-api.potatoo.dev/api/update/area',jsonString);
+        this.travelArea_RUD('https://travel-api.potatoo.dev/api/update/area',jsonString);
     }
 
 
+
+
+    /* db insert 용 */
+    getName(){
+        let jsonString = [];
+
+        for(let i=0; i < cityList_json.length; i++){
+            jsonString[i] = Object.values(cityList_json[i])[1];
+            
+        }
+        
+        jsonString = JSON.stringify(jsonString);
+
+        console.log(jsonString);
+
+        this.travelArea_RUD('https://travel-api.potatoo.dev/api/insert/area', jsonString);
+
+
+    } 
 
 
 
