@@ -131,12 +131,8 @@ class Map{
         }
         
         jsonString = JSON.stringify(jsonString);
-
         console.log(jsonString);
-
         this.travelArea_RUD('https://travel-api.potatoo.dev/api/insert/area', jsonString);
-
-
     } 
 
 
