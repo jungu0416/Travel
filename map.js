@@ -15,7 +15,6 @@ class Map{
     getFullName(param){
         for(let i=0; i < cityList_json.length; i++){
             if(Object.values(cityList_json[i])[0] == param){
-                alert(Object.values(cityList_json[i])[1]);
                 return Object.values(cityList_json[i])[1];
             }
         }
@@ -37,12 +36,11 @@ class Map{
         
         //비동기 통신일때
         xhr.onload = () => { 
-            //통신 성공 
             if (xhr.status == 200) { 
                 this.repeatJSON(xhr.response);
             } else { 
-                //통신 실패
                 alert("통신 실패"); 
+                location.reload();
             } 
         }
     }
@@ -63,13 +61,10 @@ class Map{
         
         //비동기 통신일때
         xhr.onload = () => { 
-            //통신 성공 
             if (xhr.response >= 1) { 
-                alert("작업 완료"); 
                 location.reload();
             } else { 
-                //통신 실패
-                alert("작업 실패"); 
+                alert("통신 실패"); 
                 location.reload();
             } 
         }
@@ -102,7 +97,7 @@ class Map{
     
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
-        let input = confirm('확인 누르면 색칠 / 취소 누르면 색칠안함');
+        let input = confirm('변경하시겠습니까?');
         let update;
 
         if(input){
