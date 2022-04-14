@@ -121,21 +121,4 @@ class Map{
 
 
 
-    /* db insert 용 */
-    getName(){
-        let jsonString = [];
-
-        for(let i=0; i < cityList_json.length; i++){
-            jsonString[i] = Object.values(cityList_json[i])[1];
-            
-        }
-        
-        jsonString = JSON.stringify(jsonString);
-        console.log(jsonString);
-        this.travelArea_RUD('https://travel-api.potatoo.dev/api/insert/area', jsonString);
-    } 
-
-
-
-
 }
