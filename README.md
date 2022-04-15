@@ -4,7 +4,9 @@
 
 # svg 파일 삽입하여 자바스크립트와 연동
 
-# 통신 : HTMl -> RESTAPI 통신을 통해 구성
+# HTMl -> RESTAPI 통신을 통해 구성
+
+# 정적페이지라 서버session 체크 못하는데 브라우저 세션으로 체크하는 로직 만들까 생각 중...
 
 https://travel.potatoo.dev
 
