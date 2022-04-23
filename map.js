@@ -114,6 +114,13 @@ class Map{
     }
 
 
+    MobileOrPC(mapCss){
+        let mobileOrPc =  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        if(!mobileOrPc){
+            mapCss.style.width = "700px";
+        }
+    }
 
 
 }
