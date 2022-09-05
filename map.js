@@ -97,20 +97,26 @@ class Map{
     
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
-        let input = confirm('변경하시겠습니까?');
-        let update;
+        let prom = prompt('비밀번호를 입력하세요'); //나중엔 DB연결할꺼임 SHA256 쓰면 괜찮을듯
 
-        if(input){
-            update = 'Y'
+        if(prom == '0212'){
+            let input = confirm('변경하시겠습니까?');
+            let update;
+
+            if(input){
+                update = 'Y'
+            }else{
+                update = 'N'
+            }
+
+            let content = this.getFullName(item.textContent);
+            let mapcontent = {"location" : content , "update" : update};
+            let jsonString = JSON.stringify(mapcontent);
+
+            this.travelArea_RUD('https://travel-api.potatoo.dev/api/update/area',jsonString);
         }else{
-            update = 'N'
+            alert('비밀번호가 틀렸습니다.');
         }
-
-        let content = this.getFullName(item.textContent);
-        let mapcontent = {"location" : content , "update" : update};
-        let jsonString = JSON.stringify(mapcontent);
-
-        this.travelArea_RUD('https://travel-api.potatoo.dev/api/update/area',jsonString);
     }
 
 
