@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build'){
             steps{
-                sh "cp -f ../travel_project_front/* /home/travel "
+                sh "cp -f ./* /home/travel "
             }
         }
         stage('Deploy'){
