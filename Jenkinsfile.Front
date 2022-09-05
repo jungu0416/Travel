@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build'){
             steps{
-                sh "cp -f ./* /home/travel "
+                sh "sudo cp -f ./* /home/travel "
             }
         }
         stage('Deploy'){
