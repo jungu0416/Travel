@@ -6,4 +6,4 @@
 ## About
 * REST API 통신
 
-![travel](./travel.png)
+![travel](./public/travel.png)
