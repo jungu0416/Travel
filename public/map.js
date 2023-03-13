@@ -113,8 +113,8 @@ class Map{
             let mapcontent = {"location" : content , "update" : update};
             let jsonString = JSON.stringify(mapcontent);
 
-            //this.travelArea_RUD('https://travel-api.potatoo.dev/api/update/area',jsonString);
-            this.travelArea_RUD('http://127.0.0.1:9002/api/update/area',jsonString);
+            this.travelArea_RUD('https://travel-api.potatoo.dev/api/update/area',jsonString);
+            //this.travelArea_RUD('http://127.0.0.1:9002/api/update/area',jsonString);
 
         }else{
             alert('비밀번호가 틀렸습니다.');
