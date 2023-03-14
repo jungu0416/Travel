@@ -81,10 +81,10 @@ class Map{
             //let cityName = this.getFullName(jsonParse[i].location);
             let cityName = jsonParse[i].location;
             let changeColor;
-            changeColor = svgDoc.getElementById(cityName);
+            changeColor = svg.contentDocument.getElementById(cityName);
     
             if(changeColor == null){
-                changeColor = svgDoc.getElementsByClassName(cityName);
+                changeColor = svg.contentDocument.getElementsByClassName(cityName);
                 for(let i=0; i < changeColor.length; i++){
                     changeColor[i].style.cssText = 'fill: rgb(108 242 125);';
                 }

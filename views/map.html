@@ -53,8 +53,7 @@
         }	 
 
         svg =  document.getElementById("map-svg");
-        svgDoc = svg.contentDocument;
-        _travel_area = svgDoc.getElementsByClassName("travel_area");
+        _travel_area = svg.contentDocument.getElementsByClassName("travel_area");
         mapCss = document.getElementById("map");
 
         let mapClass = new Map();
