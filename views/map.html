@@ -13,45 +13,6 @@
 <script>
     window.onload = function(){
 
-        var opacity =0;
-        var intervalID=0;
-        
-        intervalID = setInterval(hide,200);
-
-        setTimeout(function() {
-            intervalID = setInterval(show,200);
-        }, 1000);
-    
-        function hide(){
-            var div = document.getElementById("map");
-            opacity = Number(window.getComputedStyle(div).getPropertyValue("opacity"));
-            
-            if(opacity>0){
-                //Fade out 핵심 부분
-                opacity = opacity-opacity;
-                div.style.opacity=opacity;
-                //img.style.opacity=opacity;
-            }
-            else{
-                clearInterval(intervalID);
-            }
-        }
-        
-        function show(){
-            var div = document.getElementById("map");
-            opacity = Number(window.getComputedStyle(div).getPropertyValue("opacity"));
-            
-            if(opacity<1){
-                //Fade in 핵심 부분
-                opacity = opacity+0.1;
-                div.style.opacity=opacity;
-                //img.style.opacity=opacity;
-            }
-            else{
-                clearInterval(intervalID);
-            }
-        }	 
-
         svg =  document.getElementById("map-svg");
         _travel_area = svg.contentDocument.getElementsByClassName("travel_area");
         mapCss = document.getElementById("map");
