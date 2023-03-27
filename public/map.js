@@ -125,9 +125,11 @@ class Map{
     MobileOrPC(mapCss){
         let mobileOrPc =  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-        if(!mobileOrPc){
-            mapCss.style.width = "700px";
+        if(mobileOrPc){
+            document.getElementById("Layer_1").style.width = "400px";
+            document.getElementById("Layer_1").style.height = "600px";
         }
+        
     }
 
 
