@@ -8,7 +8,8 @@ app.set('view engine', 'html');
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('map.html')
+    res.render('map.html');
+    //res.render('worldMap.html');
 });
 
 app.listen(port, () => {
