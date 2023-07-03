@@ -21,7 +21,7 @@ class Map{
     }
 
     // travel-api select
-    travelArea_C(uri) {
+    getArea(uri) {
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
@@ -39,14 +39,14 @@ class Map{
             if (xhr.status == 200) { 
                 this.repeatJSON(xhr.response);
             } else { 
-                alert("통신 실패"); 
+                alert("서버와의 통신이 끊겼습니다. 다시 접속해 주세요."); 
                 location.reload();
             } 
         }
     }
 
     // travel-api insert or update 
-    travelArea_RUD(uri,jsonString){
+    insertArea(uri,jsonString){
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
@@ -61,12 +61,7 @@ class Map{
         
         //비동기 통신일때
         xhr.onload = () => { 
-            if (xhr.response >= 1) { 
-                location.reload();
-            } else { 
-                alert("통신 실패"); 
-                location.reload();
-            } 
+            location.reload();
         }
 
     }
@@ -97,28 +92,14 @@ class Map{
     
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
-        let prom = prompt('비밀번호를 입력하세요'); //나중엔 DB연결할꺼임 SHA256 쓰면 괜찮을듯
-
-        if(prom == '0212'){
-            let input = confirm('변경하시겠습니까?');
-            let update;
-
-            if(input){
-                update = 'Y'
-            }else{
-                update = 'N'
-            }
             
             let content = this.getFullName(item.textContent);
-            let mapcontent = {"location" : content , "update" : update};
+            let mapcontent = { "location" : content };
             let jsonString = JSON.stringify(mapcontent);
 
-            this.travelArea_RUD('https://travel-api.potatoo.dev/api/area',jsonString);
+            this.insertArea('https://travel-api.potatoo.dev/api/area',jsonString);
             //this.travelArea_RUD('http://127.0.0.1:9002/api/area',jsonString);
 
-        }else{
-            alert('비밀번호가 틀렸습니다.');
-        }
     }
 
 
