@@ -26,7 +26,7 @@ class Map{
         let xhr = new XMLHttpRequest();
     
         //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
-        xhr.open('POST', uri , true);
+        xhr.open('GET', uri , true);
     
         //HTTP 요청 헤더 설정 
         xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
