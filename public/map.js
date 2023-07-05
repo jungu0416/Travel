@@ -47,6 +47,8 @@ class Map{
 
     // travel-api insert or update 
     insertArea(uri,jsonString){
+        
+    /*
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
@@ -63,7 +65,7 @@ class Map{
         xhr.onload = () => { 
             location.reload();
         }
-
+    */
     }
 
     /* JSON 객체를 가져와서 색칠하기 */
