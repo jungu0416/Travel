@@ -1,13 +1,19 @@
 class Map{
 
-    /* click 이벤트 생성 */
-    makeClickEvent(travelArr){
+    /* 이벤트 생성 */
+    event(travelArr){
         for (let i = 0; i < travelArr.length; i++) {
             travelArr[i].addEventListener('click', () => {
                 this.fillArea(travelArr[i]);
             });
+
+            travelArr[i].addEventListener('mouseover', () => {
+                travelArr[i].classList.add("mouseVisual");
+            });
+
         }
     };
+
 
     /* 해당 글자를 시/군으로 알려줌 
      * cityList_json = json 형식의 변수
