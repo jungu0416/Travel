@@ -51,10 +51,9 @@ class Map{
         }
     }
 
-    // travel-api insert or update 
+    // travel-api insert
     insertArea(uri,jsonString){
         
-    /*
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
@@ -71,7 +70,30 @@ class Map{
         xhr.onload = () => { 
             location.reload();
         }
-    */
+    
+    }
+
+
+    // travel-api update 
+    updateArea(uri,jsonString){
+        
+        //XMLHttpRequest 객체 생성
+        let xhr = new XMLHttpRequest();
+    
+        //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
+        xhr.open('PUT', uri , true);
+    
+        //HTTP 요청 헤더 설정 
+        xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+
+        //요청 전송
+        xhr.send(jsonString); // <- JSON.stringify(data)를 해서 Body로 보내면됨
+        
+        //비동기 통신일때
+        xhr.onload = () => { 
+            location.reload();
+        }
+    
     }
 
     /* JSON 객체를 가져와서 색칠하기 */
@@ -100,13 +122,19 @@ class Map{
     
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
-            
-            let content = this.getFullName(item.textContent);
-            let mapcontent = { "location" : content };
-            let jsonString = JSON.stringify(mapcontent);
+        let content = this.getFullName(item.textContent);
+        let mapcontent = { "location" : content };
+        let jsonString = JSON.stringify(mapcontent);
+        let areaBackground = document.getElementById(content);
+        if(areaBackground == null) { areaBackground = document.getElementsByClassName(content); };
 
+        if( areaBackground.style.fill ) {
+            this.updateArea('https://travel-api.potatoo.dev/api/area',jsonString);
+        } else {
             this.insertArea('https://travel-api.potatoo.dev/api/area',jsonString);
-            //this.travelArea_RUD('http://127.0.0.1:9002/api/area',jsonString);
+        }
+
+        //this.upsertArea('http://127.0.0.1:9002/api/area',jsonString);
 
     }
 
