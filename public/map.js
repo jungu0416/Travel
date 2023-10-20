@@ -113,7 +113,15 @@ class Map{
         
         //비동기 통신일때
         xhr.onload = () => { 
+
+            if(xhr.status == 200 ) {
+                alert(xhr.response);
+            } else {
+                alert('오류가 발생하였습니다. 관리자에게 문의하세요.')
+            };
+
             location.reload();
+            
         }
     
     }
@@ -149,18 +157,14 @@ class Map{
         let content = this.getFullName(item.textContent);
         let mapContent = { 
             "dbKey" : dbKey,
-            "upsertArea" : "",
             "apiRequest" : {
                 "location" : content
             }
         };
         let mapContentJson = JSON.stringify(mapContent);
         
-        console.log(mapContent);
-        console.log(mapContentJson);
-        debugger;
-        
-        
+        this.upSertArea(url, mapContentJson);
+
 
         //let areaBackground = document.getElementById(content);
         //if(areaBackground == null) { areaBackground = document.getElementsByClassName(content); };
