@@ -52,36 +52,58 @@ class Map{
     }
 
     // travel-api insert
-    insertArea(uri,jsonString){
+    // insertArea(uri,jsonString){
+        
+    //     //XMLHttpRequest 객체 생성
+    //     let xhr = new XMLHttpRequest();
+    
+    //     //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
+    //     xhr.open('POST', uri , true);
+    
+    //     //HTTP 요청 헤더 설정 
+    //     xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+
+    //     //요청 전송
+    //     xhr.send(jsonString); // <- JSON.stringify(data)를 해서 Body로 보내면됨
+        
+    //     //비동기 통신일때
+    //     xhr.onload = () => { 
+    //         location.reload();
+    //     }
+    
+    // }
+
+
+    // travel-api update 
+    // updateArea(uri,jsonString){
+        
+    //     //XMLHttpRequest 객체 생성
+    //     let xhr = new XMLHttpRequest();
+    
+    //     //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
+    //     xhr.open('PUT', uri , true);
+    
+    //     //HTTP 요청 헤더 설정 
+    //     xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+
+    //     //요청 전송
+    //     xhr.send(jsonString); // <- JSON.stringify(data)를 해서 Body로 보내면됨
+        
+    //     //비동기 통신일때
+    //     xhr.onload = () => { 
+    //         location.reload();
+    //     }
+    
+    // }
+
+    // DBKEY 비교 후 upSert 
+    upSertArea(uri,jsonString){
         
         //XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
     
         //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
         xhr.open('POST', uri , true);
-    
-        //HTTP 요청 헤더 설정 
-        xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
-
-        //요청 전송
-        xhr.send(jsonString); // <- JSON.stringify(data)를 해서 Body로 보내면됨
-        
-        //비동기 통신일때
-        xhr.onload = () => { 
-            location.reload();
-        }
-    
-    }
-
-
-    // travel-api update 
-    updateArea(uri,jsonString){
-        
-        //XMLHttpRequest 객체 생성
-        let xhr = new XMLHttpRequest();
-    
-        //요청을 보낼 방식, 주소, 비동기여부 설정 (true == 비동기)
-        xhr.open('PUT', uri , true);
     
         //HTTP 요청 헤더 설정 
         xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
@@ -122,19 +144,31 @@ class Map{
     
     /* 클릭시 DB에 Insert or Update */
     fillArea(item){
+        let dbKey = prompt('비밀번호를 입력하세요', '');
+        let url = 'https://travel-api.potatoo.dev/api/dbKey'
         let content = this.getFullName(item.textContent);
-        let mapcontent = { "location" : content };
-        let jsonString = JSON.stringify(mapcontent);
-        let areaBackground = document.getElementById(content);
-        if(areaBackground == null) { areaBackground = document.getElementsByClassName(content); };
+        let mapContent = { 
+            "dbKey" : dbKey,
+            "upsertArea" : "",
+            "apiRequest" : {
+                "location" : content
+            }
+        };
+        let mapContentJson = JSON.stringify(mapContent);
+        
+        console.log(mapContent);
+        console.log(mapContentJson);
+        debugger;
+        
+        
 
-        if( areaBackground.style.fill ) {
-            this.updateArea('https://travel-api.potatoo.dev/api/area',jsonString);
-        } else {
-            this.insertArea('https://travel-api.potatoo.dev/api/area',jsonString);
-        }
-
-        //this.upsertArea('http://127.0.0.1:9002/api/area',jsonString);
+        //let areaBackground = document.getElementById(content);
+        //if(areaBackground == null) { areaBackground = document.getElementsByClassName(content); };
+        // if( areaBackground.style.fill ) {
+        //     this.updateArea('https://travel-api.potatoo.dev/api/area',jsonString);
+        // } else {
+        //     this.insertArea('https://travel-api.potatoo.dev/api/area',jsonString);
+        // }
 
     }
 
